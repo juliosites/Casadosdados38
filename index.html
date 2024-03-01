@@ -119,11 +119,8 @@
 <div id="landingPage">
     <h1></h1>
     <p></p>
-    <!-- Vídeo local -->
-    <video controls autoplay width="400"> <!-- Ajuste a largura do vídeo conforme necessário -->
-        <source src="videotestevslpages.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Vídeo do YouTube -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1RDaFjBYvqw" frameborder="0" allowfullscreen id="videoPlayer"></iframe>
     <!-- Botão CTA -->
     <button onclick="irParaPlataforma()">Compre Agora</button>
 </div>
@@ -131,8 +128,8 @@
     <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp">
 </a>
 <script>
+    // Função para redirecionar o usuário para a plataforma digital
     function irParaPlataforma() {
-        // Redirecionar o usuário para a plataforma digital onde o produto está disponível para compra
         window.location.href = 'https://pay.kiwify.com.br/HzVMqXN'; // Substitua URL_DA_SUA_PLATAFORMA_DIGITAL pelo link correto
     }
 </script>
