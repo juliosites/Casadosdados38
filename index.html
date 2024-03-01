@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOT-CASA DOS DADOS 3.8</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://i.ibb.co/mc3Gf52/casadosdados-background.png') center/cover fixed no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative; /* Para posicionar os botões flutuantes */
+        }
+
+        #landingPage {
+            max-width: 600px; /* Ajuste a largura máxima da página */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        video {
+            border-radius: 8px;
+            width: 100%; /* Define a largura do vídeo para preencher a largura do contêiner */
+            max-width: 100%; /* Garante que o vídeo não ultrapasse a largura máxima do contêiner */
+            height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção original do vídeo */
+            margin-bottom: 20px; /* Adiciona espaço entre o vídeo e o botão CTA */
+            margin-top: 20px; /* Adiciona margem superior para mover o vídeo para baixo */
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: transparent; /* Remove o fundo do botão */
+            color: #3498db; /* Cor do texto do botão */
+            border: 2px solid #3498db; /* Adiciona uma borda ao botão */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Adicionando transição para animação */
+            animation: pulse 2s infinite; /* Animação de pulso */
+            margin-top: 20px; /* Adiciona espaço entre o vídeo e o botão CTA */
+        }
+
+        button:hover {
+            background-color: #3498db; /* Cor de fundo do botão quando o mouse está sobre ele */
+            color: #fff; /* Cor do texto do botão quando o mouse está sobre ele */
+            transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            animation: pulse 2s infinite; /* Adiciona a animação pulsante */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Conteúdo da Landing Page -->
+<div id="landingPage">
+    <h1></h1>
+    <p></p>
+    <!-- Vídeo local -->
+    <video controls autoplay width="400"> <!-- Ajuste a largura do vídeo conforme necessário -->
+        <source src="videotestevslpages.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Botão CTA -->
+    <button onclick="irParaPlataforma()">Compre Agora</button>
+</div>
+<a href="https://wa.me/5516991981760" class="whatsapp-button" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp">
+</a>
+<script>
+    function irParaPlataforma() {
+        // Redirecionar o usuário para a plataforma digital onde o produto está disponível para compra
+        window.location.href = 'https://pay.kiwify.com.br/HzVMqXN'; // Substitua URL_DA_SUA_PLATAFORMA_DIGITAL pelo link correto
+    }
+</script>
+
+</body>
+</html>
