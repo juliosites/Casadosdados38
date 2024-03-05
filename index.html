@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa dos Dados 3.8 - Leads Segmentados Extração Rápida Fácil e Eficiente</title>
@@ -230,6 +231,11 @@
 <body>
     <div class="parallax"></div>
 <header>
+</nav>
+<button class="hamburger" onclick="toggleMenu()">
+    <img src="https://image.flaticon.com/icons/png/512/32/32195.png" alt="Menu">
+</button>
+
     <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Logo da Empresa" class="logo">
     <div class="social-icons">
         <a href="https://www.instagram.com/casadosdados3.8" target="_blank"><img src="https://i.ibb.co/syg02vZ/1.png" alt=""></a>
@@ -403,7 +409,14 @@
             }
         }
     }
-
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
     
  
 </script>
