@@ -1,44 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOT-CASA DOS DADOS 3.8</title>
-
+    <title>Casa dos Dados 3.8 - Leads Segmentados Extração Rápida Fácil e Eficiente</title>
+    <link rel="icon" href="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" type="image/x-icon">
     <style>
-        /* Estilos gerais */
+        /* Adicione estilos CSS personalizados aqui */
         body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://i.ibb.co/z6vNzST/C-pia-de-EXTRACTOR.png') center/cover fixed no-repeat;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            position: relative; /* Para posicionar os botões flutuantes */
         }
-
-        #landingPage {
-            max-width: 600px; /* Ajuste a largura máxima da página */
-            padding: 20px;
+        header {
+            background-color: #000000;
+            color: #000000;
+            padding: 10px 0; /* Ajusta o espaço interno do cabeçalho */
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between; /* Alinha os elementos ao redor */
+            align-items: center; /* Alinha verticalmente ao centro */
+            width: 100%; /* Faz com que o cabeçalho ocupe toda a largura da tela */
+            position: fixed; /* Fixa o cabeçalho no topo da página */
+            top: 0; /* Posiciona o cabeçalho no topo da página */
+            z-index: 1000; /* Garante que o cabeçalho esteja sempre acima do conteúdo */
+        }
+        .logo {
+            width: 130px;
+            height: auto;
+            margin-left: 20px; /* Adiciona um espaço à esquerda da logo */
+        }
+        .social-icons {
+            margin-right: 20px; /* Adiciona um espaço à direita dos ícones sociais */
+        }
+        nav {
+            margin-top: 10px;
+            margin-right: 20px; /* Adiciona um espaço à direita do menu */
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 20px; /* Adiciona bordas arredondadas aos botões do menu */
+            padding: 8px 16px;
+            transition: background-color 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+            border: 2px solid transparent; /* Adiciona uma borda transparente */
+        }
+        nav a:hover {
+            background-color: #017bfe; /* Muda a cor de fundo ao passar o mouse */
+            border-color: #ffffff; /* Muda a cor da borda ao passar o mouse */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 80px; /* Ajusta o espaço entre o cabeçalho e o conteúdo */
+        }
+        .social-icons a {
+            margin-left: 10px; /* Adiciona espaçamento entre os ícones */
+        }
+        section {
+            padding: 20px 0;
             text-align: center;
         }
-
-        h1 {
-            margin-bottom: 20px;
-            color: #3498db;
+        footer {
+            background-color: #000000f1;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            margin-top: 20px; /* Ajusta o espaço entre o conteúdo e o rodapé */
         }
-
-        p {
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            animation: pulse 2s infinite; /* Adiciona a animação pulsante */
         }
-
-        iframe {
+        .whatsapp-button img {
+            width: 60px;
+            height: auto;
+        }
+        button {
+            background-color: #2a83fff1;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease; /* Adiciona uma transição suave ao passar o mouse */
+        }
+        button:hover {
+            transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .social-icons {
+                margin-top: 0;
+            }
+            header {
+                padding: 10px;
+            }
+            .logo {
+                width: 150px;
+            }
+        }
+        /* Estilos do menu de área de cobertura */
+        .menu {
+            display: flex;
+            flex-wrap: wrap; /* Isso permite que os itens sejam envolvidos em várias linhas */
+            gap: px; /* Espaçamento entre os itens */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+        }
+        .menu-item {
+            width: 20%; /* Define a largura dos itens para que haja 5 itens em cada linha */
+            padding: 10px;
+            box-sizing: border-box; /* Garante que o preenchimento não afete a largura real dos itens */
+            background-color: #000000f1; /* Cor de fundo dos itens */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .menu-item:hover {
+            background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+        }
+        .hidden {
+            display: none; /* Oculta os itens do menu */
+        }
+        /* Estilos dos serviços */
+        .servicos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .servico {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .servico img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .servico h3 {
+            margin-top: 0;
+        }
+        .servico p {
+            text-align: justify;
+        }
+        /* Estilos dos serviços */
+        .servicos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .servico {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease; /* Adiciona uma transição suave ao passar o mouse */
+        }
+        .servico:hover {
+            transform: translateY(-10px); /* Move o elemento para cima ao passar o mouse */
+        }
+        .servico img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        video {
             border-radius: 8px;
             width: 100%; /* Define a largura do vídeo para preencher a largura do contêiner */
             max-width: 100%; /* Garante que o vídeo não ultrapasse a largura máxima do contêiner */
@@ -58,6 +209,8 @@
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Adicionando transição para animação */
             animation: pulse 2s infinite; /* Animação de pulso */
             margin-top: 20px; /* Adiciona espaço entre o vídeo e o botão CTA */
+            display: block; /* Alterado para exibir como bloco */
+            margin: 0 auto; /* Centraliza o botão horizontalmente */
         }
 
         button:hover {
@@ -66,72 +219,193 @@
             transform: scale(1.05); /* Efeito de escala ao passar o mouse */
         }
 
-        .whatsapp-button {
-            position: fixed;
-            bottom: 2px;
-            right: 2px;
-            z-index: 999;
-            animation: pulse 2s infinite; /* Adiciona a animação pulsante */
+        button:hover {
+            background-color: #3498db; /* Cor de fundo do botão quando o mouse está sobre ele */
+            color: #fff; /* Cor do texto do botão quando o mouse está sobre ele */
+            transform: scale(1.05); /* Efeito de escala ao passar o mouse */
         }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-            }
-        }
-
-        /* Estilos específicos para telas menores */
-        @media only screen and (max-width: 600px) {
-            #landingPage {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 24px;
-                margin-bottom: 15px;
-            }
-
-            p {
-                font-size: 14px;
-                margin-bottom: 15px;
-            }
-
-            button {
-                font-size: 14px;
-                padding: 10px 20px;
-                margin-top: 15px;
-            }
-        }
+       
     </style>
 </head>
 <body>
+    <div class="parallax"></div>
+<header>
+    <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Logo da Empresa" class="logo">
+    <div class="social-icons">
+        <a href="https://www.instagram.com/casadosdados3.8" target="_blank"><img src="https://i.ibb.co/syg02vZ/1.png" alt=""></a>
+        <a href="https://www.facebook.com/casadosdados3.8" target="_blank"><img src="https://i.ibb.co/XLPD5sx/2.png" alt=""></a>
+        <a href="https://www.youtube.com/@botCASADOSDADOS" target="_blank"><img src="https://i.ibb.co/94vX1Qx/3.png" alt=""></a>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#servicos">FUNÇÕES</a>
+        <a href="#porque-escolher">Por que Escolher?</a>
+        <a href="#area-cobertura">Área de Cobertura</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
 
-<!-- Conteúdo da Landing Page -->
-<div id="landingPage">
-    <h1></h1>
-    <p></p>
-    <!-- Vídeo do YouTube -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4A8h6aEGZZI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="videoPlayer"></iframe>
-    <!-- Botão CTA -->
-    <button onclick="irParaPlataforma()">Compre Agora</button>
-</div>
+<section id="home">
+    <div class="container">
+        <h1>Extração de Leads Rápida, Fácil e Descomplicada</h1>
+<h2>Obtenha leads segmentados de forma eficiente e rápida</h2>
+<h3>O melhor serviço de extração de leads, disponível 24 horas por dia</h3>
+<p>Nossa extensão salva leads segmentados em arquivo CSV, permitindo até 1000 leads em menos de 5 minutos e até 80.000 leads em um dia.</p>
+<p>Comprometidos com sua satisfação, estamos prontos para superar suas expectativas.</p>
+<p>Nossa equipe experiente garante um processo de extração ágil e eficiente, sem demoras desnecessárias.</p>
+<p>Preços competitivos e qualidade incomparável fazem de nós a escolha ideal para suas necessidades de extração de leads.</p>
+<p>Obtenha leads para seu negócio de forma rápida e confiável.</p>
+
+<iframe width="866" height="487" src="https://www.youtube.com/embed/4A8h6aEGZZI" title="CASA DOS DADO 3.8 BEM-VINDOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+        <button onclick="window.location.href='https://wa.me/551697100334'">Obter a Extensão</button>
+    </div>
+</section>
+
+<section id="servicos">
+    <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos">
+            <div class="servico">
+                <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Serviço 1">
+                <div>
+                    <h3>Extração de Leads Rápida e Fácil em Ribeirão Preto</h3>
+                    <p>Estamos sempre disponíveis para oferecer soluções de extração de leads de forma rápida e fácil em Ribeirão Preto. Fale conosco para saber como podemos ajudar o seu negócio a crescer!</p>
+                    <button onclick="window.location.href='https://wa.me/551697100334'">WhatsApp</button>
+                </div>
+            </div>
+            <div class="servico">
+                <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Serviço 2">
+                <div>
+                    <h3>Extração de Leads Segmentados para Empresas</h3>
+        <p>Oferecemos extração de leads segmentados para empresas que desejam alcançar seu público-alvo de forma eficiente. Agende uma demonstração conosco!</p>
+                    <button onclick="window.location.href='https://wa.me/551697100334'">WhatsApp</button>
+                </div>
+            </div>
+            <div class="servico">
+                <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Serviço 2">
+                <div>
+                    <h3>Extração de Leads para E-commerce</h3>
+                    <p>Aumente as vendas do seu e-commerce com a extração de leads direcionados ao seu nicho de mercado. Entre em contato e descubra como podemos ajudar!</p>
+                    <button onclick="window.location.href='https://wa.me/551697100334'">WhatsApp</button>
+                </div>
+        </div>
+        <div class="servico">
+            <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Serviço 2">
+            <div>
+                <h3>Extração de Leads para Pequenas Empresas</h3>
+        <p>Apoiamos pequenas empresas na geração de leads qualificados para impulsionar seus negócios. Entre em contato para saber mais!</p>
+                <button onclick="window.location.href='https://wa.me/551697100334'">WhatsApp</button>
+            </div>
+    </div>
+    <div class="servico">
+        <img src="https://i.ibb.co/W3PNyfs/logo-casa-dos-dados-3-8.png" alt="Serviço 2">
+        <div>
+            <h3>Extração de Leads Personalizados</h3>
+            <p>Oferecemos soluções personalizadas de extração de leads para atender às necessidades específicas do seu negócio. Entre em contato para uma consulta personalizada!</p>
+            <button onclick="window.location.href='https://wa.me/551697100334'">WhatsApp</button>
+        </div>
+</section>
+
+<section id="porque-escolher">
+    <div class="container">
+        <h2>Por que Escolher Casa dos Dados 3.8 para Extração de Leads?</h2>
+                
+<h3>Investimento Único, Resultados Permanentes</h3>
+<p>Com a nossa ferramenta, você faz um único investimento e desfruta de resultados permanentes. A extensão Casa dos Dados 3.8 oferece uma solução vitalícia, permitindo que você gere milhares, até milhões de leads ao ano, sem pagar taxas adicionais. Isso significa que você pode expandir sua base de leads de forma ilimitada, sem custos recorrentes, garantindo um excelente retorno sobre o investimento a longo prazo.</p>
+                    
+<h3>Profissionalismo e Eficiência Garantidos</h3>
+<p>Nossa equipe dedicada e plataforma otimizada garantem um processo de extração de leads profissional e eficiente. Com a Casa dos Dados 3.8, você pode contar com a precisão e segurança na geração de leads segmentados, proporcionando resultados confiáveis para impulsionar o crescimento do seu negócio.</p>
+                    
+<h3>Compromisso com a Satisfação do Cliente</h3>
+<p>Valorizamos sua satisfação acima de tudo. Nosso compromisso é superar suas expectativas, oferecendo uma ferramenta de alta qualidade, fácil de usar e com suporte personalizado. Com a Casa dos Dados 3.8, sua satisfação é garantida, pois seu sucesso é nossa prioridade.</p>
+                    
+<h3>Experiência e Confiabilidade</h3>
+<p>Com anos de experiência no desenvolvimento de soluções de extração de dados, somos uma empresa confiável para atender às suas necessidades de geração de leads segmentados. Nossa reputação é baseada na excelência, na integridade e no compromisso com o sucesso dos nossos clientes. Conte conosco para uma experiência de extração de leads confiável e profissional.</p>
+                    
+<h3>Preços Acessíveis</h3>
+<p>Oferecemos preços acessíveis e transparentes para nossa ferramenta de extração de leads. Entendemos a importância de fornecer soluções acessíveis sem comprometer a qualidade. Com a Extração de Leads Rápida e Fácil, você obtém resultados de qualidade a um preço justo.</p>
+
+               
+                    <button onclick="window.location.href='https://wa.me/551697100334'">Saiba Mais</button>
+
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</section>
+
+<section id="area-cobertura">
+    <div class="container">
+        <h2>Área de Cobertura</h2>
+        <!-- Menu de Área de Cobertura -->
+        <div>
+            <h3>Alcance Nacional: Do Acre ao Rio Grande do Sul</h3>
+            <p>A Casa dos Dados 3.8 atende clientes em todo o Brasil, cobrindo desde o encanto da floresta amazônica no Acre até as paisagens deslumbrantes do Rio Grande do Sul. Com presença em todos os 27 estados brasileiros, oferecemos serviços de extração de leads que impulsionam o crescimento do seu negócio em qualquer região do país. Entre em contato conosco hoje mesmo para explorar as oportunidades que esperam por você, independentemente de onde esteja no Brasil!</p>
+            <button onclick="window.location.href='https://wa.me/551697100334'">WhatsApp</button>
+        </div>
+        
+
+<section id="contato">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        contato@botcasadosdados.com.br
+        Telefone: (16) 99710-0334 Ribeirão Preto -SP
+        <!-- Adicione informações de contato aqui -->
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 BOT - Casa dos Dados 3.8. Todos os direitos reservados.</p>
+    <p>Desenvolvido por: <a href="https://wa.me/5516997100334">Julio Matheux</a></p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/casadosdados3.8" target="_blank"><img src="https://i.ibb.co/syg02vZ/1.png" alt=""></a>
+        <a href="https://www.facebook.com/casadosdados3.8" target="_blank"><img src="https://i.ibb.co/XLPD5sx/2.png" alt=""></a>
+        <a href="https://www.youtube.com/@botCASADOSDADOS" target="_blank"><img src="https://i.ibb.co/94vX1Qx/3.png" alt=""></a>
+    </div>
+</footer>
+
 <a href="https://wa.me/5516997100334" class="whatsapp-button" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp">
 </a>
+
 <script>
-    // Função para redirecionar o usuário para a plataforma digital
-    function irParaPlataforma() {
-        window.location.href = 'https://pay.kiwify.com.br/HzVMqXN'; // Substitua URL_DA_SUA_PLATAFORMA_DIGITAL pelo link correto
+    // Função para adicionar bairros à área de cobertura
+    function adicionarBairro(nomeBairro, texto) {
+        var menuCobertura = document.getElementById("menu-cobertura");
+        var novoBairro = document.createElement("div");
+        novoBairro.classList.add("menu-item");
+        novoBairro.textContent = nomeBairro;
+        novoBairro.onclick = function() {
+            exibirTextoBairro(nomeBairro);
+        };
+        menuCobertura.appendChild(novoBairro);
+
+        // Adiciona o texto do bairro ao final do documento
+        var container = document.querySelector("#area-cobertura .container");
+        var novoTexto = document.createElement("div");
+        novoTexto.id = nomeBairro.toLowerCase().replace(/\s/g, '-'); // Transforma o nome do bairro em id
+        novoTexto.classList.add("hidden");
+        novoTexto.innerHTML = "<p>" + texto + "</p>";
+        container.appendChild(novoTexto);
     }
+
+    // Função para exibir o texto do bairro selecionado e ocultar os outros textos
+    function exibirTextoBairro(nomeBairro) {
+        var bairros = document.querySelectorAll('.container > div[id^="bairro"]');
+        for (var i = 0; i < bairros.length; i++) {
+            if (bairros[i].id === nomeBairro.toLowerCase().replace(/\s/g, '-')) {
+                bairros[i].classList.remove('hidden');
+            } else {
+                bairros[i].classList.add('hidden');
+            }
+        }
+    }
+
+    
+ 
 </script>
 
 </body>
